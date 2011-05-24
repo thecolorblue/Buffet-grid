@@ -17,15 +17,8 @@
         </div><!-- .entry-content -->
         
 		<!-- <?php trackback_rdf() ?> -->
-		<?php bf_postfooter() ?>
 
     </div>
-    
-	<?php bf_below_post() ?>
-	<a name="comments"></a>
-    <?php comments_template('', true); ?>
-	<?php bf_below_comments() ?>
-    
 <?php else: ?>
 
 <?php bf_post_notfound() ?>
