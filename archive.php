@@ -10,7 +10,7 @@
 <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 <?php if ( is_category() ) : ?>
-    <h3><?php printf( __('%s Archive', 'buffet'), single_cat_title() ) ?></h3>
+    <h3><?php printf( __('%s Category', 'buffet'), single_cat_title() ) ?></h3>
 <?php elseif ( is_tag() ) : ?>
     <h3><?php printf( __('%s Archive', 'buffet'), single_tag_title() ) ?></h3>
 <?php elseif ( is_day() ) : ?>
@@ -31,9 +31,12 @@
 <div class="hfeed news-list clearfix">
 <?php while (have_posts()) : the_post() ?>
 	<div <?php bf_post_class(); ?>>
-		<?php bf_archive_postheader(); ?>
-		<?php bf_archive_postbody(); ?>
-		<?php bf_archive_postfooter(); ?>
+		<?php bf_postheaderh5(); ?>  
+		<a href="<?php the_permalink(); ?>">
+  		  <?php bf_frontbody(); ?>  
+		</a>
+		<br/>
+         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">More Info</a>
 	</div>
 <?php endwhile; ?>
 </div><!-- .hfeed -->
