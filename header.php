@@ -8,7 +8,7 @@
 <?php if ( is_search() || is_author() ) : ?>
 <meta name="robots" content="noindex, nofollow" />
 <?php endif ?>
-
+<link href='http://fonts.googleapis.com/css?family=Wire+One:regular' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
 <link rel="alternate" type="application/rss+xml" href="<?php bf_rss_url() ?>" title="<?php printf( __( '%s latest posts', 'arras' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
