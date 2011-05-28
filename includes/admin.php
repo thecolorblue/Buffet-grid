@@ -201,11 +201,11 @@ function bf_admin_styles() {
  * 
  * @ignore
  * @since	0.5.2
- */
+ 
 function bf_add_dashboard() {
 	wp_add_dashboard_widget( 'widget-arras', __('zy.sg - Developer\'s Blog', 'buffet'), 'bf_dashboard_widget', null );
 }
-
+*/
 /**
  * {@internal Missing Short Description }}
  * 
