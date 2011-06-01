@@ -9,6 +9,12 @@
  * @subpackage API
  */
 
+if ( function_exists( 'register_nav_menu' ) ) {
+  register_nav_menu( 'primary', 'Primary Menu for this Theme' );
+}
+
+
+
 /**
  * bf_get_page_no() - Get Page Number Function
  * 

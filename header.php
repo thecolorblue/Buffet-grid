@@ -60,7 +60,9 @@ bf_head();
     </div><!-- #header -->
     
 	<?php bf_above_nav() ?>
-	<?php bf_nav() ?>
+	<?php 
+	wp_nav_menu( array( 'container_class' => 'menu clearfix', 'menu_class' => 'menu nav clearfix','menu_id' => 'nav','theme_location' => 'primary' ) );
+     ?>
 	<?php bf_below_nav() ?>
     
 	<div id="main">
