@@ -1,6 +1,7 @@
 <?php
 // Load jQuery
 wp_enqueue_script('jquery');
+add_theme_support( 'post-thumbnails' );
 
 // Load theme localization
 load_theme_textdomain('buffet');
@@ -40,6 +41,67 @@ require_once BF_LIB . '/launcher.php';
 // Not sure if this action will be useful here.
 // The extensions file is using this though.
 do_action('bf_init');
+
+
+function bf_check_parent_of_att($attachmentID, $postID){
+  
+//  if(they do match){
+//  return true;
+//  } else return false;
+}
+
+function bf_get_post_content($postId) {
+$post = get_post($postId);
+$postOutput = preg_replace('/<img[^>]+./','', $post->post_content);
+return $post;
+}
+function bf_get_post_thumbnail($postID){
+$currentPost = $postID;
+$args = array( 'post_type' => 'attachment', 
+              'numberposts' => -1, 
+              'post_status' => null, 
+              'post_parent' => $postID 
+); 
+$attachments = get_posts($args);
+  if ($attachments) {
+	foreach ( $attachments as $attachment ) {
+      if($attachment->post_parent == $currentPost){
+        $toBeReturned = wp_get_attachment_image_src($attachment->ID, 'thumbnail');
+        echo '<img src="';
+        echo $toBeReturned[0];
+        echo '">';
+      }
+    }
+  } 
+}
+
+/* New action for Front Page layouts */
+
+function native_grid($id){
+  echo '<div class="native-grid post" id="';
+  echo $id;
+  echo '">';
+  echo '<h5 class="entry-title">';
+  echo '<a href="';
+  echo the_permalink();
+  echo '">';
+  echo the_title();
+  echo '</a>';
+  echo  '</h5>'; 
+  echo	get_the_post_thumbnail($id);
+  echo	'<a href="';
+  echo get_permalink($id);
+  echo '">';
+  echo bf_get_post_thumbnail($id);
+  echo '</a>';
+  echo	'<br/>';
+  echo '<a class="more-link" href="';
+  echo the_permalink();
+  echo '">More Info</a>';
+  echo '</div>';
+}
+
+add_action('front_page_layout','native_grid');
 
 /* End of file functions.php */
 /* Location: ./functions.php */

@@ -9,6 +9,8 @@
  * @subpackage API
  */
 
+add_option( 'layout_frontpage', 'grid', '', 'yes' );
+
 if ( function_exists( 'register_nav_menu' ) ) {
   register_nav_menu( 'primary', 'Primary Menu for this Theme' );
 }

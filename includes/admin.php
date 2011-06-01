@@ -221,22 +221,6 @@ function bf_dashboard_widget() {
 }
 
 /**
- * bf_dashboard_rss_url() - Dashboard RSS URL
- * 
- * Returns the RSS feed link that is used in the dashboard.
- * You can override this using the <b>bf_dashboard_rss_url</b> filter.
- * 
- * {@internal Missing Long Description }}
- * 
- * @hook	filter	bf_dashboard_rss_url
- * @since	0.5.2
- */
-function bf_dashboard_rss_url() {
-	$url = 'http://www.zy.sg/category/wordpress/feed/';
-	return apply_filters('bf_dashboard_rss_url', $url);
-}
-
-/**
  * {@internal Missing Short Description }}
  * 
  * {@internal Missing Long Description }}
@@ -449,7 +433,15 @@ function bf_admin_layout_form() {
 	</th>
 	<td></td>
 	</tr>
-	
+	<?php 
+if ($handle = opendir(__DIR__ . '/layouts')) {
+    while (false !== ($file = readdir($handle))) {
+        echo "$file\n";
+    }
+
+    closedir($handle);
+}
+?>
 	</table>
 	
 	<?php do_action('bf_admin_layout_form') ?>
@@ -553,5 +545,10 @@ function bf_wpmu_update_options() {
 	update_site_option('bf_wpmu_enable_ext', (boolean)$_POST['bf-wpmu-enable-ext']);
 }
 
+
+
 /* End of file admin.php */
 /* Location: ./includes/admin.php */
+
+
+
