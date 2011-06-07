@@ -254,7 +254,7 @@ padding:5px -5px 3px 10px;
 list-style:none;
 height:30px;
 background:rgba(250,250,250,.5);
-       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FAFAFA60,endColorstr=#FAFAFA60);
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
 
 -webkit-box-shadow: inset 1px 1px 30px #2b313a;
 -moz-box-shadow: inset 1px 1px 30px #2b313a;

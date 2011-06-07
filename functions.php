@@ -42,14 +42,6 @@ require_once BF_LIB . '/launcher.php';
 // The extensions file is using this though.
 do_action('bf_init');
 
-
-function bf_check_parent_of_att($attachmentID, $postID){
-  
-//  if(they do match){
-//  return true;
-//  } else return false;
-}
-
 function bf_get_post_content($postId) {
 $post = get_post($postId);
 $postOutput = preg_replace('/<img[^>]+./','', $post->post_content);
