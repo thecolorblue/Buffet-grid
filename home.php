@@ -5,7 +5,7 @@
 
 
 <?php wp_reset_query(); 
-query_posts( 'cat=' . bf_get_option('news_cat') . '&paged=' . $paged );
+query_posts( );
 if ( have_posts() ) : ?>
 
 <div class="hfeed news-list clearfix">

@@ -2,7 +2,7 @@
 // Load jQuery
 wp_enqueue_script('jquery');
 add_theme_support( 'post-thumbnails' );
-
+add_option('front_page_option','native-grid','','yes');
 // Load theme localization
 load_theme_textdomain('buffet');
 
