@@ -8,6 +8,12 @@ load_theme_textdomain('buffet');
 
 $theme_data = get_theme( get_current_theme() );
 
+add_action('init', 'buffet_custom_init');
+
+function buffet_custom_init() {
+    add_post_type_support( 'page', array('excerpt'));
+}
+
 // Define PHP file constants.
 define( BF_DIR, TEMPLATEPATH );
 define( BF_LIB, BF_DIR . '/includes' );
@@ -42,6 +48,8 @@ require_once BF_LIB . '/launcher.php';
 // The extensions file is using this though.
 do_action('bf_init');
 
+
+
 function bf_get_post_content($postId) {
 $post = get_post($postId);
 $postOutput = preg_replace('/<img[^>]+./','', $post->post_content);
@@ -70,6 +78,27 @@ $attachments = get_posts($args);
 /* New action for Front Page layouts */
 
 function native_grid($id){
+    $postparts = get_post($id,ARRAY_A);
+  if($postparts['post_type'] == 'page'){ 
+    echo '<div class="page-grid page" id="';
+    echo $id;
+    echo '">';
+    echo '<h5 class="entry-title">'; 
+    echo '<a href="';
+    echo the_permalink();
+    echo '">';
+    echo the_title();
+    echo '</a>';
+    echo '</h5>'; 
+    echo '<div class="page-content">';
+    echo $postparts['post_content'];
+    echo '</div>';
+    echo '<br/>';
+    echo '<a class="more-link" href="';
+    echo the_permalink();
+    echo '">Read More</a>';
+    echo '</div>';
+  } else {
   echo '<div class="native-grid post" id="';
   echo $id;
   echo '">';
@@ -91,9 +120,12 @@ function native_grid($id){
   echo the_permalink();
   echo '">More Info</a>';
   echo '</div>';
+    }
 }
 
 add_action('front_page_layout','native_grid');
+
+add_action('search_page_layout','native_grid');
 
 /* End of file functions.php */
 /* Location: ./functions.php */

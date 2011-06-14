@@ -282,5 +282,7 @@ function bf_quick_news_posts($class, $q = '') {
 	}
 }
 
+
+
 /* End of file helpers.php */
 /* Location: ./includes/helpers.php */

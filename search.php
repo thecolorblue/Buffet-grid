@@ -11,11 +11,7 @@
 
 <div class="hfeed">
 <?php while (have_posts()) : the_post() ?>
-	<div <?php bf_post_class(); ?>>
-		<?php bf_search_postheader(); ?>
-		<?php bf_search_postbody(); ?>
-		<?php bf_search_postfooter(); ?>
-	</div>
+    <?php do_action('search_page_layout',get_the_ID()); ?>
 <?php endwhile; ?>
 </div><!-- .hfeed -->
 

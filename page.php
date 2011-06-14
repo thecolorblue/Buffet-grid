@@ -16,9 +16,6 @@
 			'after' => '</p>', 'next_or_number' => 'number')); ?>
         </div><!-- .entry-content -->
 		
-		<!-- <?php trackback_rdf() ?> -->
-		<?php bf_pagefooter() ?>
-
 	</div>
 	
 	<?php bf_below_post() ?>
