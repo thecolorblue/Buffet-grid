@@ -48,7 +48,9 @@ require_once BF_LIB . '/launcher.php';
 // The extensions file is using this though.
 do_action('bf_init');
 
-
+if ( function_exists( 'register_nav_menu' ) ) {
+    register_nav_menu( 'footer_menu', 'Menu right before Footer' );
+}
 
 function bf_get_post_content($postId) {
 $post = get_post($postId);
