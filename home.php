@@ -2,9 +2,9 @@
 
 <div id="content" class="section">
 <?php bf_above_content() ?>
-<div class='about'>
+<div class='before-about'>
 <?php
-$page = get_page_by_title( 'Front Page' );
+$page = get_page_by_title( 'Before_Front_Page' );
 print_r( $page->post_content);
 ?>
 </div>
@@ -21,7 +21,12 @@ if ( have_posts() ) : ?>
 <?php endif; ?>
 
 <?php bf_below_index_news(); ?>
-
+<div class='before-about'>
+<?php
+$page = get_page_by_title( 'After_Front_Page' );
+print_r( $page->post_content);
+?>
+</div>
 <?php bf_below_content() ?>
 </div><!-- #content -->
 
