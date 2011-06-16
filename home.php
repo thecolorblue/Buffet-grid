@@ -2,10 +2,14 @@
 
 <div id="content" class="section">
 <?php bf_above_content() ?>
-
-
+<div class='about'>
+<?php
+$page = get_page_by_title( 'Front Page' );
+print_r( $page->post_content);
+?>
+</div>
 <?php wp_reset_query(); 
-query_posts( );
+query_posts( array ( 'category_name' => 'Just off the Easel', 'posts_per_page' => -1 ) );
 if ( have_posts() ) : ?>
 
 <div class="hfeed news-list clearfix">
