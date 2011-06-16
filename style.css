@@ -336,25 +336,25 @@ overflow:auto;
     position: relative;
 }
 
-.menu {
+#footer .menu {
 border:0;
 display:inline-block;
 }
-.menu {
+#footer .menu {
 width:100%;
 margin:0 auto;
 text-align:center;
 }
-.menu ul li {
+#footer .menu ul li {
 display:inline;    
 margin:10px;
 }
-.menu ul li a {
+#footer .menu ul li a {
 text-decoration:none;
 padding:10px;
 margin-left:20px;
 color:#999;
 }
-.menu ul li a:hover {
+#footer .menu ul li a:hover {
 color:#FFB800;
 }
