@@ -336,25 +336,25 @@ overflow:auto;
     position: relative;
 }
 
-.menu-logged-in-user-container .menu {
+.menu {
 border:0;
 display:inline-block;
 }
-.menu-logged-in-user-container {
+.menu {
 width:100%;
 margin:0 auto;
 text-align:center;
 }
-.menu-logged-in-user-container ul li {
+.menu ul li {
 display:inline;    
 margin:10px;
 }
-.menu-logged-in-user-container ul li a {
+.menu ul li a {
 text-decoration:none;
 padding:10px;
 margin-left:20px;
 color:#999;
 }
-.menu-logged-in-user-container ul li a:hover {
+.menu ul li a:hover {
 color:#FFB800;
 }
